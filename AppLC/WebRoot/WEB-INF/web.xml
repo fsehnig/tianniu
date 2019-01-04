@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.4" 
+	xmlns="http://java.sun.com/xml/ns/j2ee" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee 
+	http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
+	
+	<!-- spring监听在web中启动 -->
+<!-- 	<context-param>  
+	   <param-name>contextConfigLocation</param-name>  
+	   <param-value>
+	   /WEB-INF/classes/SpringContext.xml
+	   </param-value>  
+	</context-param>  
+	<listener>  
+	   <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>  
+	</listener> -->
+	<listener>
+  		<listener-class>ch.qos.logback.ext.spring.web.LogbackConfigListener</listener-class>
+	</listener>
+	<context-param>
+	 	<param-name>logbackConfigLocation</param-name>
+	  	<param-value>classpath:logback.xml</param-value>
+	</context-param>
+	
+	<filter>
+	    <filter-name>characterEncodingFilter</filter-name>  
+	    <filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>  
+	    <init-param>  
+	        <param-name>encoding</param-name>  
+	        <param-value>UTF-8</param-value>  
+	    </init-param>  
+	    <init-param>  
+	        <param-name>forceEncoding</param-name>  
+	        <param-value>true</param-value>  
+	    </init-param>  
+	</filter>
+	<filter-mapping>  
+	    <filter-name>characterEncodingFilter</filter-name>  
+	    <url-pattern>/*</url-pattern>  
+	</filter-mapping>  
+	
+	<!-- 添加spring mvc servlet -->
+	<servlet>
+		<servlet-name>SpringMVC</servlet-name>
+		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+		<init-param>
+	        <param-name>contextConfigLocation</param-name>
+	        <param-value>/WEB-INF/classes/SpringContext.xml</param-value>
+    	</init-param>
+    	<load-on-startup>1</load-on-startup>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>SpringMVC</servlet-name>
+		<url-pattern>*.do</url-pattern>
+	</servlet-mapping>
+	
+	<!-- 添加comet servlet -->
+	<listener>
+		<description>Comet4J容器侦听</description>
+		<listener-class>org.comet4j.core.CometAppListener</listener-class>
+	</listener>
+	<servlet>
+		<description>Comet连接[默认:org.comet4j.core.CometServlet]</description>
+		<display-name>CometServlet</display-name>
+		<servlet-name>CometServlet</servlet-name>
+		<servlet-class>org.comet4j.core.CometServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>CometServlet</servlet-name>
+		<url-pattern>/comet</url-pattern>
+	</servlet-mapping>
+	<listener>  
+		<description>AjaxComet</description>  
+		<listener-class>com.tcl.shbc.comet.listener.AjaxComet</listener-class>  
+	</listener>  
+	
+	<mime-mapping>
+		<extension>inc</extension>
+		<mime-type>text/plain</mime-type>
+	</mime-mapping>
+</web-app>

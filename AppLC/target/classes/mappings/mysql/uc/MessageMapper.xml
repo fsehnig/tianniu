@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.tcl.shbc.bussiness.sqlmaps.uc.MessageMapper" >
+	<insert id="insertMessage" parameterType="com.tcl.shbc.bussiness.entity.uc.Message">
+		insert into MESSAGE (id,userId,title,content,kind,type,deviceType,iconUrl,startTime,endTime,isRead)
+					 values (#{id},#{userId},#{title},#{content},#{kind},#{type},#{deviceType},#{iconUrl},#{startTime},#{endTime},#{isRead})
+	</insert>
+  
+  
+</mapper>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+		
+	<!-- mongodb配置 -->
+	<bean id="mongodb" class="com.tcl.shbc.common.mongo.MongoConfig">
+		<property name="host" value="${mongo.host}"/>
+		<property name="port" value="${mongo.port}"/>
+		<property name="username" value="${mongo.username}"/>
+		<property name="password" value="${mongo.password}"/>
+		<property name="connectionsPerHost" value="${mongo.connectionsPerHost}"/>
+		<property name="socketTimeOut" value="${mongo.socketTimeOut}"/>
+		<property name="threadsAllowedToBlockForConnectionMultiplier" value="${mongo.threadsAllowedToBlockForConnectionMultiplier}"/>
+		<property name="defaultDatebase" value="${mongo.defaultDatebase}"/>
+	</bean>
+
+</beans>

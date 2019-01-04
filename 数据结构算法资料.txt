@@ -1,0 +1,8 @@
+2019-01-04
+学习数据结构和算法是重中之重
+学习资料：1.先看网盘中的视频（共11P）
+	  2.B站视频
+	  3.数据结构的文字资料：https://blog.csdn.net/myvanguard/article/details/84106039
+	  4.视频：数据结构探险之树篇-慕课网   https://www.imooc.com/learn/673
+	          数据结构探险之队列篇-慕课网   https://www.imooc.com/learn/519
+		  数据结构探险-栈篇  https://www.imooc.com/learn/611

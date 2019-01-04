@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration debug="true">
+	<!--开发环境
+	<property name="LOG_HOME" value="${catalina.base:-.}/logs" />-->
+	
+	<!--阿里云服务器
+	<property name="LOG_HOME" value="/mnt/database/shbcLog/AppLC" />
+	-->
+	<!--mie服务器
+	<property name="LOG_HOME" value="/data/log/AppLC" />-->
+	
+	<!-- 正式版环境 -->
+    <property name="LOG_HOME" value="/alidata1/shbcLog/AppLC" />
+    
+    <property name="LOG_FILENAME" value="${LOG_HOME}/AppLC" />
+
+	<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+		<Encoding>UTF-8</Encoding>
+		<encoder>
+			<pattern>%date %level %logger{50} [%file:%line] %msg%n</pattern>
+		</encoder>
+	</appender>
+
+	<appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<Encoding>UTF-8</Encoding>
+		<file>${LOG_FILENAME}.log</file>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>${LOG_FILENAME}.%d{yyyy-MM-dd}.log</fileNamePattern>
+			<maxHistory>7</maxHistory>
+		</rollingPolicy>
+		<encoder>
+			<pattern>%date %level %logger{50} [%file:%line] %msg%n</pattern>
+		</encoder>
+	</appender>
+
+	<logger name="com.tcl.shbc" level="info" />
+	<logger name="org" level="error" />
+	
+	
+	<root level="info">
+		<!--  
+		<appender-ref ref="STDOUT" />
+		-->
+		<appender-ref ref="FILE" />
+	</root>
+</configuration>
+
