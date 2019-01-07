@@ -1,4 +1,4 @@
-new file in repository floder => $ git ad xx.txt xx.rar.. => git commit -m "content" => $ git status => 
+new file in repository floder => $ git add xx.txt xx.rar.. => git commit -m "content" => $ git status => 
 
 $ git diff :show difference
 $ git log [--pretty=oneline] : show log
