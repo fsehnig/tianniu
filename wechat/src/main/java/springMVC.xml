@@ -24,6 +24,10 @@
     
     <mvc:default-servlet-handler />
     
+   <!--  <bean class="org.springframework.http.converter.StringHttpMessageConverter">
+    	<property name="supportedMediaType" value="text/html;charset=UTF-8"/>
+    </bean> -->
+    
         <bean id="mappingJacksonHttpMessageConverter"
         class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">
         <property name="supportedMediaTypes">
@@ -37,7 +41,7 @@
         class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter">
         <property name="messageConverters">
             <list>
-                <ref bean="mappingJacksonHttpMessageConverter" /><!-- json转换器 -->
+                <ref bean="mappingJacksonHttpMessageConverter" />
             </list>
         </property>
     </bean>

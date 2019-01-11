@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN" "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd" >
+<generatorConfiguration>
+    <classPathEntry location="E:\workspace\maven\maven\repository\com\oracle\ojdbc6\11.2.0.1.0\ojdbc6-11.2.0.1.0.jar" />
+    <context id="context1" >
+        <jdbcConnection driverClass="oracle.jdbc.driver.OracleDriver" connectionURL="jdbc:oracle:thin:@212.64.95.21:1521:orcl" userId="MEMBER" password="MEMBER" />
+        <javaModelGenerator targetPackage="com.tianniu.pojo" targetProject="src/main/java">
+            <property name="aaa" value="true" />
+        </javaModelGenerator>
+        <sqlMapGenerator targetPackage="com.tianniu.mapper"  targetProject="src/main/java" >
+            <property name="aaa" value="true" />
+        </sqlMapGenerator>
+        <table schema="" tableName="MEMBER_CONSUMER" domainObjectName="MemberConsumer"	enableCountByExample="true"	enableUpdateByExample="true" enableDeleteByExample="true"	enableSelectByExample="true"  selectByExampleQueryId="true" />
+        <table schema="" tableName="MEMBER_INFO" domainObjectName="MemberInfo"	enableCountByExample="true"	enableUpdateByExample="true" enableDeleteByExample="true"	enableSelectByExample="true"  selectByExampleQueryId="true" />
+        <table schema="" tableName="MEMBER_ORDER" domainObjectName="MemberOrder" enableCountByExample="true"	enableUpdateByExample="true" enableDeleteByExample="true"	enableSelectByExample="true"  selectByExampleQueryId="true" />
+        <table schema="" tableName="MEMBER_GOODS" domainObjectName="MemberGoods" enableCountByExample="true"	enableUpdateByExample="true" enableDeleteByExample="true"	enableSelectByExample="true"  selectByExampleQueryId="true" />
+        <table schema="" tableName="MEMBER_GOODSRECORD" domainObjectName="MemberGoodsRecord" enableCountByExample="true"	enableUpdateByExample="true" enableDeleteByExample="true"	enableSelectByExample="true"  selectByExampleQueryId="true" />
+        <table schema="" tableName="MEMBER_RECORDS" domainObjectName="MemberRecords" enableCountByExample="true"	enableUpdateByExample="true" enableDeleteByExample="true"	enableSelectByExample="true"  selectByExampleQueryId="true" />
+	</context>
+</generatorConfiguration>

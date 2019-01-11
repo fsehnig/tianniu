@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+	<mapper namespace="com.tianniu.mapper.maps.LoginMapper">
+	    <select id="list" resultType="com.tianniu.pojo.User">
+	        select * from   MEMBER_order where openid = #{openid}    
+	    </select>	    
+	    
+	    <select id="get" resultType="com.tianniu.pojo.MemberOrder">
+	    	select * from member_order where openid = #{openid}
+	    </select>
+	</mapper>
+
