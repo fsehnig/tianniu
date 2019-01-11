@@ -1,23 +1,5 @@
-websearch:xx site:www
+websearch : xx site:www
 
 svn:https://212.64.95.21/svn/Code
 
-cloud before context root:tianniukeji_maven
-
-canot change project facets to 2.5:先取消勾取Dynamic Web Module,apply,version改为2.5,勾选，apply
-
-jfinal开发weixin框架，听说在他人机器上都可以，但是在本机上eclipse+jdk1.8+tomcat8.5不成功，只有部分controller能访问，也不能进入debug模式，考虑到是不是配置文件有问题，映射不到，于是在web.xml中添加如下：<welcome-file-list> 
-		<welcome-file>index.html</welcome-file>
-	</welcome-file-list> 
-	<filter> 
-		<filter-name>jfinal</filter-name> 
-		<filter-class>com.jfinal.core.JFinalFilter</filter-class> 
-		<init-param> 
-			<param-name>configClass</param-name> 
-			<param-value>com.tianniukeji.cloud.common.TianniukejiConfig</param-value> 
-		</init-param> 
-	</filter> 
-	<filter-mapping> 
-		<filter-name>jfinal</filter-name> 
-		<url-pattern>/*</url-pattern> 
-	</filter-mapping>
+本机oracle : 管理口令：Orcl_123
